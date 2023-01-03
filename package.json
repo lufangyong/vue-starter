@@ -3,12 +3,14 @@
   "packageManager": "pnpm@7.12.0",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --port 3333 --open",
-    "lint": "eslint .",
+    "dev": "vite --port 3333",
+    "lint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:lint-staged": "lint-staged",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
-    "up": "taze major -I"
+    "up": "taze major -I",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vueuse/core": "^9.6.0",
@@ -17,14 +19,19 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.33.1",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@iconify-json/carbon": "^1.1.11",
     "@types/node": "^18.11.13",
+    "@typescript-eslint/parser": "^5.20.0",
     "@unocss/reset": "^0.47.6",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue-macros/volar": "^0.5.4",
     "@vue/test-utils": "^2.2.6",
     "eslint": "^8.29.0",
+    "husky": "^7.0.4",
     "jsdom": "^20.0.3",
+    "lint-staged": "12.3.7",
     "pnpm": "^7.18.1",
     "taze": "^0.8.4",
     "typescript": "^4.9.4",
@@ -37,7 +44,12 @@
     "vitest": "^0.25.7",
     "vue-tsc": "^1.0.13"
   },
-  "eslintConfig": {
-    "extends": "@antfu"
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix"
+    ]
   }
 }
