@@ -16,6 +16,13 @@ module.exports = {
   },
   extends: ['@antfu'],
   rules: {
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     'no-unused-vars': [
       'error',
       {

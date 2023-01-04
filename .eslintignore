@@ -13,4 +13,4 @@ dist
 .local
 /bin
 Dockerfile
-commitlint.config.js
+
