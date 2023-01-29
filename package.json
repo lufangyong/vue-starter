@@ -3,7 +3,7 @@
   "packageManager": "pnpm@7.12.0",
   "scripts": {
     "build": "vite build",
-    "dev": "vite --port 3333",
+    "dev": "vite",
     "lint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
     "lint:lint-staged": "lint-staged",
     "typecheck": "vue-tsc --noEmit",
@@ -18,6 +18,7 @@
     "@vueuse/integrations": "^9.10.0",
     "axios": "^1.2.2",
     "lodash-es": "^4.17.21",
+    "mockjs": "^1.1.0",
     "qs": "^6.11.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
@@ -33,6 +34,7 @@
     "@typescript-eslint/parser": "^5.20.0",
     "@unocss/reset": "^0.47.6",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue-macros/volar": "^0.5.4",
     "@vue/test-utils": "^2.2.6",
     "eslint": "^8.29.0",
@@ -49,6 +51,7 @@
     "unplugin-vue-components": "^0.22.12",
     "unplugin-vue-macros": "^1.0.3",
     "vite": "^4.0.0",
+    "vite-plugin-mock": "^2.9.6",
     "vite-plugin-pages": "^0.27.1",
     "vitest": "^0.25.7",
     "vue-tsc": "^1.0.13"

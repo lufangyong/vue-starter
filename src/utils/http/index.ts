@@ -55,7 +55,6 @@ instance.interceptors.response.use(
 export default function useAxiosApi<T = any, R = any>(url: string, config: HttpRequestConfig) {
   const { immediate = true } = config
 
-  // return instance(url, config, immediate)
   return useAxios<T, R>(url, config, instance, {
     immediate,
   })

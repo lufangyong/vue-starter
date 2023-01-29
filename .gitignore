@@ -8,3 +8,5 @@ node_modules
 .idea/
 *.log
 .eslintcache
+types/auto-imports.d.ts
+types/components.d.ts
