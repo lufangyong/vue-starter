@@ -1,46 +1,32 @@
 <script setup lang="ts">
+import { useI18n } from '/@/hooks/web/useI18n'
+import { useLocale } from '/@/locales/useLocale'
+
 defineOptions({
   name: 'IndexPage',
 })
 
-const name = $ref('')
+const { t } = useI18n()
+const { changeLocale } = useLocale()
 
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+const changeLo = () => {
+  changeLocale('en')
+}
+
+const changeLoZg = () => {
+  changeLocale('zh_CN')
 }
 </script>
 
 <template>
   <div>
-    <div i-carbon-campsite text-4xl inline-block />
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-        Vitesse Lite
-      </a>
-    </p>
-    <p>
-      <em text-sm op75>Opinionated Vite Starter Template</em>
-    </p>
-
-    <div py-4 />
-
-    <TheInput
-      v-model="name"
-      placeholder="What's your name?"
-      autocomplete="false"
-      @keydown.enter="go"
-    />
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        Go
-      </button>
-    </div>
+    <div>测试翻译</div>
+    <h2> {{ t('routes.basic.login') }}</h2>
+    <button class="m-3 text-sm btn" @click="changeLoZg">
+      zh
+    </button>
+    <button class="m-3 text-sm btn" @click="changeLo">
+      en
+    </button>
   </div>
 </template>

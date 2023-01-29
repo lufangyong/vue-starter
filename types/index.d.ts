@@ -2,6 +2,12 @@ declare interface Fn<T = any, R = T> {
   (...arg: T[]): R;
 }
 
+declare type Nullable<T> = T | null;
+
+declare type Recordable<T = any> = Record<string, T>;
+
+declare type TimeoutHandle = ReturnType<typeof setTimeout>
+
 declare interface ViteEnv {
   VITE_PORT: number;
   VITE_USE_MOCK: boolean;
