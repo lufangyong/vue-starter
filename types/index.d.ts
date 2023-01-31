@@ -8,6 +8,8 @@ declare type Recordable<T = any> = Record<string, T>;
 
 declare type TimeoutHandle = ReturnType<typeof setTimeout>
 
+declare type TargetContext = '_self' | '_blank';
+
 declare interface ViteEnv {
   VITE_PORT: number;
   VITE_USE_MOCK: boolean;
@@ -24,3 +26,5 @@ declare interface ViteEnv {
   VITE_USE_IMAGEMIN: boolean;
   VITE_GENERATE_UI: string;
 }
+
+declare type ElRef<T extends HTMLElement = HTMLDivElement> = Nullable<T>;

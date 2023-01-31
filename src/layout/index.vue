@@ -1,8 +1,14 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
-  <main font-sans>
+  <div>
+    layout
     <RouterView />
-  </main>
+  </div>
 </template>
+
+<style scoped>
+
+</style>

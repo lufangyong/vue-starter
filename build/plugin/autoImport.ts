@@ -15,9 +15,7 @@ export const configAutoImportDeps = () => {
       'pinia',
     ],
     dts: 'types/auto-imports.d.ts',
-    dirs: [
-      './src/composables',
-    ],
+    dirs: [],
     vueTemplate: true,
   })
 }
