@@ -1,6 +1,5 @@
 import type { PluginOption } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
 import Unocss from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -18,9 +17,6 @@ export function createVitePlugins(isBuild: boolean) {
       },
     }),
     vueJsx(),
-
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages(),
 
     configAutoImportDeps(),
 
