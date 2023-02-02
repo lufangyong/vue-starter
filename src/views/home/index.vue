@@ -4,7 +4,6 @@
 <template>
   <div>
     home
-    <ClickOutSide />
   </div>
 </template>
 

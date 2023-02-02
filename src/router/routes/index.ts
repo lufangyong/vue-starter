@@ -1,4 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
+import { PAGE_NOT_FOUND_ROUTE } from '/@/router/routes/basic'
 
 const modules: Record<string, any> = import.meta.glob('./modules/**/*.ts', {
   eager: true,
@@ -25,4 +26,5 @@ export const RootRoute: RouteRecordRaw = {
 export const basicRoutes = [
   RootRoute,
   ...routeModuleList,
+  PAGE_NOT_FOUND_ROUTE,
 ]

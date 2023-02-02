@@ -1,9 +1,10 @@
 import type { RouteRecordRaw } from 'vue-router'
+import { LAYOUT } from '../constant'
 
 const homeRouter: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('/@/layout/index.vue'),
+    component: LAYOUT,
     redirect: '/home',
     children: [
       {
