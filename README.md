@@ -1,8 +1,4 @@
 
-## 克隆到本地
+## vue-starter
+vue3 + vite + ts template
 
-如果您更喜欢使用更干净的 git 历史记录手动执行此操作
-
-```bash
-npx degit
-```
