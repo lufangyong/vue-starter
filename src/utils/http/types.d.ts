@@ -2,7 +2,7 @@ import Axios, {
   Method,
   AxiosError,
   AxiosResponse,
-  AxiosRequestConfig
+  InternalAxiosRequestConfig
 } from 'axios'
 
 export type resultType = {
@@ -24,7 +24,7 @@ export interface HttpResponse extends AxiosResponse {
   config: HttpRequestConfig
 }
 
-export interface HttpRequestConfig extends AxiosRequestConfig {
+export interface HttpRequestConfig extends InternalAxiosRequestConfig {
   /**
    * 是否立即执行
    */

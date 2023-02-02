@@ -7,7 +7,7 @@ const axiosCanceler = new AxiosCanceler()
 
 // create an axios instance
 const instance = axios.create({
-  baseURL: '',
+  baseURL: import.meta.env.VITE_GLOB_API_URL,
   withCredentials: false,
   timeout: 5000,
 })
