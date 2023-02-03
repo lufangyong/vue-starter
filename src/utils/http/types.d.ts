@@ -2,12 +2,9 @@ import Axios, {
   Method,
   AxiosError,
   AxiosResponse,
-  InternalAxiosRequestConfig
+  AxiosRequestConfig,
+  AxiosRequestHeaders
 } from 'axios'
-
-export type resultType = {
-  accessToken?: string
-}
 
 export type RequestMethods = Extract<
   Method,
@@ -24,9 +21,9 @@ export interface HttpResponse extends AxiosResponse {
   config: HttpRequestConfig
 }
 
-export interface HttpRequestConfig extends InternalAxiosRequestConfig {
+export interface HttpRequestConfig extends AxiosRequestConfig {
   /**
-   * 是否立即执行
+   * 使用 useRequest 是否立即执行
    */
   immediate?: boolean
   /**
@@ -41,8 +38,8 @@ export interface HttpRequestConfig extends InternalAxiosRequestConfig {
    * 是否返回原生响应头 比如：需要获取响应头时使用该属性
    */
   isReturnNativeResponse?: boolean
-  /**
-   * 参数格式化为 formData
-   */
-  formatFormData?: boolean
+}
+
+export interface HttpInternalAxiosRequestConfig extends HttpRequestConfig {
+  headers: AxiosRequestHeaders
 }
