@@ -5,6 +5,7 @@
     "build": "vite build",
     "dev": "vite",
     "lint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
@@ -44,7 +45,14 @@
     "less": "^4.1.3",
     "lint-staged": "13.1.0",
     "pnpm": "^7.26.2",
+    "postcss-html": "^1.4.1",
     "postcss-less": "^6.0.0",
+    "stylelint": "^14.7.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
     "taze": "^0.8.5",
     "typescript": "^4.9.5",
     "unocss": "^0.49.1",
@@ -61,7 +69,12 @@
       "eslint --fix"
     ],
     "*.vue": [
-      "eslint --fix"
+      "eslint --fix",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "stylelint --fix",
+      "prettier --write"
     ]
   }
 }
