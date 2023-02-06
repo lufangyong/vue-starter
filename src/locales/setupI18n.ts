@@ -38,4 +38,3 @@ export async function setupI18n(app: App) {
   i18n = createI18n(options)
   app.use(i18n)
 }
-
