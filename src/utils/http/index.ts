@@ -84,7 +84,7 @@ class Http {
 
   /** 单独抽离的post工具函数 */
   public post<T>(
-    config?: HttpRequestConfig,
+    config: HttpRequestConfig,
   ): Promise<T> {
     return this.request<T>({
       method: 'post',
@@ -94,7 +94,7 @@ class Http {
 
   /** 单独抽离的get工具函数 */
   public get<T>(
-    config?: HttpRequestConfig,
+    config: HttpRequestConfig,
   ): Promise<T> {
     return this.request<T>({
       method: 'get',
