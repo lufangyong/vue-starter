@@ -7,6 +7,7 @@ const { changeLocale } = useLocale()
 
 <template>
   <div>
+    <CountTo :start-val="10" :end-val="2023" />
     <h1> {{ t('routes.basic.home') }}</h1>
     <button class="m-3 text-sm btn" @click="changeLocale('zh_CN')">
       zh

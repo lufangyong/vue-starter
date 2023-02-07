@@ -1,6 +1,6 @@
 import type { App } from 'vue'
-import { ClickOutSide } from './ClickOutSide'
+import { CountTo } from './CountTo'
 
 export function registerGlobComp(app: App) {
-  app.use(ClickOutSide)
+  app.use(CountTo)
 }
