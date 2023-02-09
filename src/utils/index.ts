@@ -1,4 +1,4 @@
-import type { App, Plugin } from 'vue'
+import type { App, Component, Plugin } from 'vue'
 
 import { isObject } from '/@/utils/is'
 import { cloneDeep } from 'lodash-es'
@@ -54,8 +54,9 @@ export function openWindow(
   window.open(url, target, feature.join(','))
 }
 
-export const withInstall = <T>(component: T, alias?: string) => {
+export const withInstall = <T>(component: Component, alias?: string) => {
   const comp = component as any
+
   comp.install = (app: App) => {
     app.component(comp.name || comp.displayName, component)
     if (alias)
@@ -63,4 +64,3 @@ export const withInstall = <T>(component: T, alias?: string) => {
   }
   return component as T & Plugin
 }
-
