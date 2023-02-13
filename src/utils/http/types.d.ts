@@ -23,10 +23,6 @@ export interface HttpResponse extends AxiosResponse {
 
 export interface HttpRequestConfig extends AxiosRequestConfig {
   /**
-   * 使用 useRequest 是否立即执行
-   */
-  immediate?: boolean
-  /**
    * 是否忽略重复请求
    */
   ignoreCancelToken?: boolean
@@ -38,6 +34,13 @@ export interface HttpRequestConfig extends AxiosRequestConfig {
    * 是否返回原生响应头 比如：需要获取响应头时使用该属性
    */
   isReturnNativeResponse?: boolean
+}
+
+export interface UseRequestConfig extends HttpRequestConfig {
+  /**
+   * 使用 useRequest 是否立即执行
+   */
+  immediate?: boolean
 }
 
 export interface HttpInternalAxiosRequestConfig extends HttpRequestConfig {

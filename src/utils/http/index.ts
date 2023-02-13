@@ -2,7 +2,7 @@ import { useAxios } from '@vueuse/integrations/useAxios'
 import type { AxiosInstance, AxiosRequestConfig, CustomParamsSerializer } from 'axios'
 import axios from 'axios'
 import { stringify } from 'qs'
-import type { HttpInternalAxiosRequestConfig, HttpRequestConfig, HttpResponse } from './types'
+import type { HttpInternalAxiosRequestConfig, HttpRequestConfig, HttpResponse, UseRequestConfig } from './types'
 import { AxiosCanceler } from './axiosCancel'
 
 const axiosCanceler = new AxiosCanceler()
@@ -102,7 +102,7 @@ class Http {
     })
   }
 
-  public useRequest<T = any, R = any>(config: HttpRequestConfig) {
+  public useRequest<T = any, R = any>(config: UseRequestConfig) {
     const { immediate = true, url = '' } = config
 
     return useAxios<T, R>(url, config, Http.axiosInstance, {
