@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { configMockPlugin } from './mock'
 import { configAutoImportDeps } from './autoImport'
 import { configAutoRegistryComponents } from './component'
+import { configVisualizerConfig } from './visualizer'
 
 export function createVitePlugins(isBuild: boolean) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
@@ -29,6 +30,9 @@ export function createVitePlugins(isBuild: boolean) {
 
     // vite-plugin-mock
     configMockPlugin(isBuild),
+
+    // rollup-plugin-visualizer
+    configVisualizerConfig(),
   ]
 
   return vitePlugins
