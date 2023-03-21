@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 
-import path from 'path'
+import path from 'node:path'
 import type { ConfigEnv, UserConfigExport } from 'vite'
 import { loadEnv } from 'vite'
 import { createVitePlugins } from './build/plugin'
